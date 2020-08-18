@@ -14,6 +14,10 @@ RUN echo ". /root/.conda/conda/etc/profile.d/conda.sh" >> ~/.bashrc && \
 
 ENV PATH /root/.conda/conda/bin:$PATH
 
+EXPOSE 8888
+
+CMD ["jupyter", "lab", "--app-dir=/root/workspace"]
+
 # conda installation (This installation must be done using container with a volume mounted to "/root/.conda")
 # wget --quiet https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86_64.sh -O ~/miniconda.sh && \
 #     /bin/bash ~/miniconda.sh -b -p /root/.conda/conda && \
